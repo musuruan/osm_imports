@@ -40,7 +40,6 @@ def filterTags(attrs):
 
     tags["addr:postcode"] = "13900"
     tags["addr:city"] = "Biella"
-    tags["addr:country"] = "IT"
 
     return tags
 
