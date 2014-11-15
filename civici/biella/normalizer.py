@@ -40,7 +40,9 @@ def translateName(streetName):
         "da ",
         "di ",
         "de ",
-        # Articoli partitivi
+        "per ",
+        # Preposizioni articolate
+        "dal ",
         "della ",
         "delle ", 
         "del ",
@@ -52,7 +54,9 @@ def translateName(streetName):
         "e ",
         "ed ",
         # Altre parole
-        "privata "
+        "antica ",
+        "privata ",
+        "vecchia "
         ]
     
     abbreviations = {
