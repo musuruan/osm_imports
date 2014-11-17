@@ -33,7 +33,7 @@ def filterTags(attrs):
         try:
             tags["addr:street"] = streetNames[attrs["ID_VIA"]]
         except KeyError:
-            fixme = "addr:street is missing"
+            tags["fixme"] = "addr:street is missing"
     if "CIVICO" in attrs:
     # Convert housenumber to lowercase
         tags["addr:housenumber"] = attrs["CIVICO"].lower()
