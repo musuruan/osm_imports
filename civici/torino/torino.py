@@ -15,6 +15,8 @@ csv2osm.py toponomastica_01062012.csv toponomastica_01062012.osm --csv-dialect e
 
 """
 
+import normalizer
+
 def filterTags(attrs):
     if not attrs:
         return
@@ -22,7 +24,7 @@ def filterTags(attrs):
     tags = {}
 
     try:
-        tags["addr:street"] = attrs["Sedime"] + " " + attrs["Denominazione"]
+        tags["addr:street"] = normalizer.translateName(attrs["Sedime"] + " " + attrs["Denominazione"])
     except KeyError:
         tags["fixme"] = "addr:street is missing"
 
