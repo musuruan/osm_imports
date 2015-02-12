@@ -31,6 +31,7 @@ def filterTags(attrs):
     # Convert housenumber to lowercase
     tags["addr:housenumber"] = attrs["Numero_Radice"] + attrs["Secondario"].lower()
 
+    tags["is_in:suburb"] = "Circoscrizione " + attrs["circoscrizione"]
     tags["addr:postcode"] = attrs["Cap"]
     tags["addr:city"] = "Torino"
 
