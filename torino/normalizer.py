@@ -60,8 +60,7 @@ def translateName(streetName):
         ]
     
     abbreviations = {
-        "Pza ": "Piazza ",
-        "S. ": "San " # Non si può distinguere maschile e femminile!
+        "Pza ": "Piazza "
     }
     
     months = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
