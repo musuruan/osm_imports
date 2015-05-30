@@ -23,6 +23,10 @@ def filterTags(attrs):
     tags = {}
     tags["addr:street"] = normalizer.translateName(attrs["NOME_VIA"])
     tags["addr:housenumber"] = attrs["NUM_CIV"][0:attrs["NUM_CIV"].find(".")] + attrs["ESP"].lower()
-    tags["addr:postcode"] = attrs["CAP"]
+    if attrs["CAP"] != "":
+        tags["addr:postcode"] = attrs["CAP"]
+    else:
+        tags["fixme"] = "addr:postcode is missing"
     tags["addr:city"] = "Verona"
     return tags
+
