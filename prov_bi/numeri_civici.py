@@ -79,3 +79,14 @@ def filterTags(attrs):
     # tags["addr:postcode"] is missing
     tags["addr:city"] = attrs["Nome_Comun"]
     return tags
+
+def filterFeature(ogrfeature, fieldNames, reproject):
+    if not ogrfeature:
+        return
+    
+    # Filter addresses with NUMERO=sn
+    index = ogrfeature.GetFieldIndex('NUMERO')
+    if index >= 0 and ogrfeature.GetField(index) == "sn":
+        return None
+    
+    return ogrfeature
