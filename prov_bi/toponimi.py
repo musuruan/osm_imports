@@ -28,7 +28,7 @@ def removeAbbreviations(name):
     name = name.replace("Cant. ", "Cantone ")
     name = name.replace("C.le ", "Colle ")
     name = name.replace("C.ale ", "Casale ")
-    name = name.replace("L. ", u"Lago ")
+    name = name.replace("L. ", "Lago ")
     name = name.replace("Loc. ", u"Località ")
     name = name.replace("Borg.a ", "Borgata ")
     name = name.replace("Rif. ", "Rifugio ")
