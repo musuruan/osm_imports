@@ -47,7 +47,7 @@ def filterTags(attrs):
     tags = {}
     
     buildingDict = {
-        'Alpe': 'yes',
+        'Alpe': 'farm',
         'Basilica': 'church',
         'Cappella': 'chapel',
         'Casa': 'house',
@@ -124,7 +124,7 @@ def filterTags(attrs):
         if firstWord == "Cimitero":
             tags["tomb"] = "columbarium"
         
-        if firstWord == "Cascina" or firstWord == "Cascinotto" or firstWord == "Tenuta" or firstWord == "Discarica" or firstWord == "Cimitero":
+        if firstWord == "Alpe" or firstWord == "Cascina" or firstWord == "Cascinotto" or firstWord == "Tenuta" or firstWord == "Discarica" or firstWord == "Cimitero":
             del tags["name"]
         
     return tags
