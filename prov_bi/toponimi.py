@@ -77,7 +77,6 @@ def filterTags(attrs):
 
     return tags
 
-
 def filterFeature(ogrfeature, fieldNames, reproject):
     if not ogrfeature:
         return
