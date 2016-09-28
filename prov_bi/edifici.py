@@ -117,8 +117,8 @@ def filterTags(attrs):
         if firstWord == "Palestra":
             tags["leisure"] = "sports_centre"
          
-        if firstWord == "Hotel":
-            tags["building"] = "hotel"
+        # if firstWord == "Hotel":
+            # tags["building"] = "hotel"
             
         if firstWord == "Cimitero":
             tags["tomb"] = "columbarium"
