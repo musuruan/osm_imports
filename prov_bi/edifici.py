@@ -99,11 +99,6 @@ def filterTags(attrs):
         if tags["name"] == "Municipio":
             tags["building"] = "civic"
             tags["amenity"] = "townhall"
-        
-        if tags["name"] == "Farmacia":
-            tags["amenity"] = "pharmacy"
-            tags["dispensing"] = "yes"
-        
         if tags["name"] == "Ufficio Postale":
             tags["amenity"] = "post_office"
         
@@ -111,6 +106,10 @@ def filterTags(attrs):
         
         if firstWord == "Ambulatorio":
             tags["amenity"] = "clinic"
+        
+        if firstWord == "Farmacia":
+            tags["amenity"] = "pharmacy"
+            tags["dispensing"] = "yes"
         
         if firstWord == "Scuola" or tags["name"] == "Istituto Alberghiero Statale":
             tags["building"] = "school"
