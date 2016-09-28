@@ -60,8 +60,11 @@ def filterTags(attrs):
         return
 
     tags = {}
-
-    if "NUMERO" in attrs and "Toponimo" in attrs:
+    
+    # Convert housenumber to lowercase
+    tags["addr:housenumber"] = attrs["NUMERO"].lower()
+    
+    if attrs["Toponimo"] != "":
         firstSpace = attrs["Toponimo"].find(' ')
         
         DUG = attrs["Toponimo"][:firstSpace].strip()
@@ -72,12 +75,11 @@ def filterTags(attrs):
         denominazione = removeAbbreviations(denominazione)
         
         tags["addr:street"] = DUG + " " + denominazione
-        
-        # Convert housenumber to lowercase
-        tags["addr:housenumber"] = attrs["NUMERO"].lower()
-
-    # tags["addr:postcode"] is missing
-    tags["addr:city"] = attrs["Nome_Comun"]
+        # tags["addr:postcode"] is missing
+        tags["addr:city"] = attrs["Nome_Comun"]
+    else:
+        tags["fixme"] = "addr:street and addr:city are missing"
+    
     return tags
 
 def filterFeature(ogrfeature, fieldNames, reproject):
