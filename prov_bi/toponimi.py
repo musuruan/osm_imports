@@ -89,8 +89,7 @@ def filterFeature(ogrfeature, fieldNames, reproject):
         labelIndex = ogrfeature.GetFieldIndex('Label')
         label = ogrfeature.GetField(labelIndex)
         firstWord = label[: label.find(' ')]
-        if firstWord not in ("Fraz.", "Borg.a"):
+        if firstWord not in ("Fraz.", "Borg.a", "Borgata"):
             return None
 
     return ogrfeature
-
