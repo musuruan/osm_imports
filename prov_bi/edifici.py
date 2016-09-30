@@ -28,12 +28,12 @@ def removeAbbreviations(name):
     name = name.replace("Conv.to", "Convento")
     name = name.replace("Inf.", "Inferiore")
     name = name.replace("Ist.", "Istituto")
-    name = name.replace("I.T.I.S.", "Istituto Tencnico Industriale Statale")
+    name = name.replace("I.T.I.S.", "Istituto Tecnico Industriale Statale")
     name = name.replace("Monast.o", "Monastero")
     name = name.replace("Orat.o", "Oratorio")
     name = name.replace("Pal.zo", "Palazzo")
     name = name.replace("Parr.le", "parrocchiale")
-    name = name.replace("Profes. ", "Professionale")
+    name = name.replace("Profes.", "Professionale")
     name = name.replace("Rif.", "Rifugio")
     name = name.replace("Sant.o", "Santuario")
     name = name.replace("Staz.", "Stazione")
@@ -127,7 +127,7 @@ def filterTags(attrs):
             tags["building"] = "public"
             tags["office"] = "government"
             
-        if tags["name"]  == "Torre campanaria":
+        if tags["name"] == "Torre campanaria":
             tags["man_made"] = "tower"
             tags["tower:type"] = "bell_tower"
        
