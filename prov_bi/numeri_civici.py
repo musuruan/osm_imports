@@ -46,12 +46,26 @@ def expandDUG(string):
 
 def removeAbbreviations(name):
     name = name.replace("Avv." ,"Avvocato")
+    name = name.replace("Btg." ,"Battaglione")
     name = name.replace("C.na" ,"Cascina")
+    name = name.replace("Cap." ,"Capitano")
     name = name.replace("Cav." ,"Cavalier")
     name = name.replace("Cad.", "Caduti")
+    name = name.replace("com.", "comunale")
+    name = name.replace("Comm.", "Commendatore")
+    name = name.replace("Dist.", "Distaccamento")
+    name = name.replace("F.lli", "Fratelli")
+    name = name.replace("Gr. Uff.", "Grand'ufficiale")
     name = name.replace("Inf.", "Inferiore")
+    name = name.replace("inf.", "Inferiore")
+    name = name.replace("Mons.", "Monsignor")
+    name = name.replace("Sal.", "Salita")
+    name = name.replace("Sen.", "Senatore")
     name = name.replace("Soc.", u"Società")
     name = name.replace("Sup.", "Superiore")
+    name = name.replace("sup.", "Superiore")
+    name = name.replace("Ten.", "Tenente")
+    name = name.replace("Teol.", "Teologo")
     name = name.replace("vic." ,"vicinale")
     return name
 
