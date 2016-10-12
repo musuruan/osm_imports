@@ -1,7 +1,7 @@
 ﻿# coding=UTF-8
 
 """
-ogr2osm translation rules for Biella address data
+ogr2osm translation rules for Biella road data
 
 Copyright (C) 2016 Andrea Musuruane <musuruan@gmail.com>
 
