@@ -15,7 +15,7 @@ http://cartografia.provincia.biella.it/on-line/Home/Repertorio/Consultazione/AT7
 Spatial Reference: EPSG:32632 (WGS 84 / UTM zone 32N)
 
 Run with:
-ogr2osm.py --add-timestamp --add-version --positive-id -e 32632 -t stradario.py -f stradario08022016.shp
+ogr2osm.py --add-timestamp --add-version --positive-id -e 32632 -t stradario.py -f stradario08112016.shp
 """
 
 def expandDUG(string):

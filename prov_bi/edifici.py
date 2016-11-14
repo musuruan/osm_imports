@@ -15,7 +15,7 @@ http://cartografia.provincia.biella.it/on-line/Home/Repertorio/Consultazione/AT7
 Spatial Reference: EPSG:32632 (WGS 84 / UTM zone 32N)
 
 Run with:
-ogr2osm.py -e 32632 -t edifici.py -f edifici08022016.shp
+ogr2osm.py -e 32632 -t edifici.py -f edifici08112016.shp
 """
 
 def removeAbbreviations(name):

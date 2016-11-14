@@ -15,7 +15,7 @@ http://cartografia.provincia.biella.it/on-line/Home/Repertorio/Consultazione/AT7
 Spatial Reference: EPSG:32632 (WGS 84 / UTM zone 32N)
 
 Run with:
-ogr2osm.py -e 32632 -t numeri_civici.py -f Numeri_civici08022016.shp
+ogr2osm.py -e 32632 -t numeri_civici.py -f Numeri_civici08112016.shp
 """
 
 def expandDUG(string):
@@ -99,6 +99,8 @@ def filterTags(attrs):
 def filterFeature(ogrfeature, fieldNames, reproject):
     if not ogrfeature:
         return
+    
+    # TODO: filter when NUMERO is empty!
     
     # Filter addresses with NUMERO=sn
     index = ogrfeature.GetFieldIndex('NUMERO')
