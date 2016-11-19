@@ -90,7 +90,7 @@ def filterTags(attrs):
     if "Edifici" in attrs and attrs["Edifici"] != "":
         tags["name"] = removeAbbreviations(attrs["Edifici"]).strip()
         
-        if tags["name"] == "Sala del Regno":
+        if tags["name"].startswith("Sala del Regno"):
             tags["amenity"] = "place_of_worship"
             tags["religion"] = "christian"
             tags["denomination"] = "jehovahs_witness"
@@ -119,10 +119,6 @@ def filterTags(attrs):
             tags["amenity"] = "recycling"
             tags["recycling_type"] = "centre"
         
-        if tags["name"] == "Municipio":
-            tags["building"] = "civic"
-            tags["amenity"] = "townhall"
-            
         if tags["name"] == "Prefettura":
             tags["building"] = "public"
             tags["office"] = "government"
@@ -145,7 +141,7 @@ def filterTags(attrs):
         if tags["name"].startswith("Scuola Materna"):
             tags["amenity"] = "kindergarten"
             
-        if tags["name"].startswith("Stazione Ferroviaria"):
+        if tags["name"].startswith("Stazione Ferroviaria") or tags["name"].startswith("Stazione ferroviaria"):
             tags["building"] = "train_station"
             
         if tags["name"].startswith("Casa di cura") or tags["name"] == "Ospedale" or  tags["name"] == "Nuovo Ospedale":
@@ -154,7 +150,7 @@ def filterTags(attrs):
         if tags["name"].startswith("Vigili del Fuoco"):
             tags["building"] = "fire_station"
         
-        firstWord = tags["name"][:tags["name"].find(" ")]
+        firstWord = tags["name"].split(None, 1)[0]
 
         if firstWord == "Biblioteca":
             tags["amenity"] = "library"
@@ -183,10 +179,18 @@ def filterTags(attrs):
         if firstWord == "Farmacia":
             tags["amenity"] = "pharmacy"
             tags["dispensing"] = "yes"
+
+        if firstWord == "Municipio":
+            tags["building"] = "civic"
+            tags["amenity"] = "townhall"
             
         if firstWord == "Palestra":
             tags["leisure"] = "sports_centre"
-            
+
+        if firstWord == "Piscina":
+            tags["leisure"] = "swimming_pool"
+            tags["sport"] = "swimming"
+
         if firstWord in ("Scuola", "Istituto"):
             tags["building"] = "school"
             
@@ -197,7 +201,8 @@ def filterTags(attrs):
             tags["building"] = "university"
             tags["amenity"] = "university"
             
-        if firstWord == "Alpe" or firstWord == "Cascina" or firstWord == "Cascinotto" or firstWord == "Tenuta" or firstWord == "Discarica" or firstWord == "Cimitero" or tags["name"].startswith("Stazione Ferroviaria"):
+        if firstWord == "Alpe" or firstWord == "Cascina" or firstWord == "Cascinotto" or firstWord == "Tenuta" or firstWord == "Discarica" or firstWord == "Cimitero" or tags["name"].startswith("Stazione Ferroviaria") or tags["name"].startswith("Stazione ferroviaria"):
             del tags["name"]
         
     return tags
+
