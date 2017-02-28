@@ -97,7 +97,7 @@ def filterTags(attrs):
         
         if tags["name"] == "Carabinieri":
             tags["amenity"] = "police"
-            tags["operator"] = "Carabinieri"
+            tags["operator"] = "Arma dei Carabinieri"
             
         if tags["name"] == "Questura":
             tags["amenity"] = "police"
