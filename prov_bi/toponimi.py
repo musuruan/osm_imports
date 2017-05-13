@@ -57,6 +57,8 @@ def filterTags(attrs):
 
     if classifica == "Cascina":
         tags["place"] = "farm"
+    elif classifica == "Alpeggio":
+        tags["place"] = "locality"
     elif classifica == "Cime e monti":
         tags["natural"] = "peak"
     elif classifica == "Lago":
@@ -82,7 +84,7 @@ def filterFeature(ogrfeature, fieldNames, reproject):
         return
 
     index = ogrfeature.GetFieldIndex('Classifica')
-    if index >= 0 and ogrfeature.GetField(index) in ("Alpeggio", "Castello", "Cave", "Cimitero", "Edificio", "Luogo di culto", "Monastero", "Passi e bocchette", "Ponte", "Villa"):
+    if index >= 0 and ogrfeature.GetField(index) in ("Castello", "Cave", "Cimitero", "Edificio", "Luogo di culto", "Monastero", "Passi e bocchette", "Ponte", "Villa"):
         return None
 
     if index >= 0 and ogrfeature.GetField(index) == "Località":
