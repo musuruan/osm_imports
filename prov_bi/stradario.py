@@ -120,7 +120,7 @@ def filterTags(attrs):
         tags["motor_vehicle:conditional"] = "destination"
         tags["fixme"] = "Specificare ZTL"
     elif attrs["LIMIT"] == "9":
-        tags["access"] = "no"
+        tags["motor_vehicle"] = "private"
     elif attrs["LIMIT"] == "10":
         tags["maxweight"] = "2"
     elif attrs["LIMIT"] == "11":
