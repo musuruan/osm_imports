@@ -15,7 +15,7 @@ Requires ogr2osm v1.0.0:
 https://github.com/roelderickx/ogr2osm
 
 Run with:
-ogr2osm -t localita.py -f Vercelli_dbsn.gdb
+ogr2osm -t localita.py -f Vercelli_dbsn.gdb -o localita_VC.osm
 """
 
 import ogr2osm
@@ -71,6 +71,7 @@ class Translate(ogr2osm.TranslationBase):
             return None
 
         # Return the centorid
+        # Undocumented feature: https://github.com/roelderickx/ogr2osm/issues/53#issuecomment-3220486802
         ogrfeature.SetGeometry(ogrfeature.GetGeometryRef().Centroid())
 
         return ogrfeature
